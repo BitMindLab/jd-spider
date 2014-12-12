@@ -2,7 +2,8 @@
 download by git
 
     git clone https://song_xu@bitbucket.org/song_xu/jd.git
-    or by [zip-file](https://bitbucket.org/song_xu/jd/get/cf4525b7bce3.zip)
+
+或者请点 [这里](https://bitbucket.org/song_xu/jd/get/cf4525b7bce3.zip) 下载压缩包
 
 -------
 
