@@ -1,5 +1,7 @@
 # 京东商品分类 #
+download by git
 
+    git clone https://song_xu@bitbucket.org/song_xu/jd.git
 -------
 
 ## 1. 数据爬取 ##
