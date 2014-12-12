@@ -5,7 +5,6 @@ Created on Dec 8, 2014
 @author: xx
 '''
 
-verbose = False
 
 '''   
 default path
@@ -45,6 +44,7 @@ is_rmLowCount = True    # 是否删除低频词
 is_rmHighCount = False  # 是否删除高频词
 is_rmLong = True        # 是否删除过长的word（默认15）
 is_rmShort = True       # 是否删除过短的word（默认1）
+verbose = False         # 冗余模式显示
 
 
 
