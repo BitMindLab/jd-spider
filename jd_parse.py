@@ -13,12 +13,6 @@ import string
 import jd_config
 from jd_item import category, product, comment
 
-import sys
-print 'old encoding value:', sys.getdefaultencoding()
-reload(sys)
-sys.setdefaultencoding('utf-8' )
-print 'new encoding value:', sys.getdefaultencoding()
-
 
 def parse_root(root_url, start_cat = None):
     """
