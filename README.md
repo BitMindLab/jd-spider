@@ -84,6 +84,6 @@
 
 -------
 
-期待您的反馈，song.xu@nlpr.ia.ac.cn
+仓促完成，多有不足，期待您的反馈，song.xu@nlpr.ia.ac.cn
 
 更新中 ...
