@@ -1,4 +1,9 @@
 # 京东商品分类 #
+通过git下载，请使用以下命令
+
+    git clone https://song_xu@bitbucket.org/song_xu/jd.git
+
+或者请点 [这里](https://bitbucket.org/song_xu/jd/get/cf4525b7bce3.zip) 下载压缩包
 
 -------
 
@@ -13,7 +18,6 @@
 #### 抓取字段及存储 ####
 
 * [info](http://wap.jd.com/product/1227234.html) :  即product的基本信息，存储字段 [id, url, title, category, price, meta, [detail](http://wap.jd.com/detail/1227234.html)]
-* info.json :  即 info对应的json格式文件
 * [comment](http://wap.jd.com/comments/1227234.html)   :   product的评论，存储格式  u_info:u_score:u_sum
 
 
@@ -78,9 +82,11 @@
 
 -------
 
-### 运行建议 ###
+### Tips ###
 
 * 如果快速测试，请跳过1（利用已经爬取的数据，节省数据爬取的时间消耗）
+* 运行依赖 scikit-learn 和 beautifullsoup， 如需安装请参考官网
+
 
 -------
 
