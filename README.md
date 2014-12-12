@@ -65,19 +65,25 @@
 
 * comments目录： 商品评论
 * info目录：     商品基本信息（易读格式，供浏览）
-* info.json:     info目录文件的json格式（用于数据处理）
-* info.word      商品基本信息提取的特征（即每个单词，供浏览）
-* info.BOW       info.word对应的BOW转码（libSVM格式，用于分类）
+* info.json目录:     info目录文件的json格式（用于数据处理）
+* info.word目录：      商品基本信息提取的特征（即每个单词，供浏览）
+* info.BOW目录：       info.word对应的BOW转码（libSVM格式，用于分类）
 * stopwords目录： 停用词表（用于数据处理）
 
 文件：
 
 * category：      类别表（即label，共八类，行号对应id 0-7）
-* product.BOW     所有类别的BOW汇总（即info.BOW目录中的汇总）
-* word.count      所有文档的词频（用于视觉分析，或浏览）
+* product.BOW：     所有类别的BOW汇总（即info.BOW目录中的汇总）
+* word.count：      所有文档的词频（用于视觉分析，或浏览）
 
 -------
 
 ### 运行建议 ###
 
 * 倒序执行： 由于整个流程具有前后依赖关系，如果您想快速熟悉流程，请按照3,2,1倒序执行
+
+-------
+
+更新中，期待您的反馈，song.xu@nlpr.ia.ac.cn
+
+ ...
