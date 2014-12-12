@@ -18,7 +18,6 @@
 #### 抓取字段及存储 ####
 
 * [info](http://wap.jd.com/product/1227234.html) :  即product的基本信息，存储字段 [id, url, title, category, price, meta, [detail](http://wap.jd.com/detail/1227234.html)]
-* info.json :  即 info对应的json格式文件
 * [comment](http://wap.jd.com/comments/1227234.html)   :   product的评论，存储格式  u_info:u_score:u_sum
 
 
