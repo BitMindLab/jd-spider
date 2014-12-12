@@ -1,29 +1,83 @@
 # 京东商品分类 #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+-------
 
-### What is this repository for? ###
+## 1. 数据爬取 ##
+#### 预分析 ####
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* 电脑版 www.jd.com
+* 移动版 [wap.jd.com](http://wap.jd.com/)
+* 触屏版 [m.jd.com](http://m.jd.com)
 
-### How do I get set up? ###
+移动版比较简单，所以选择移动版抓取
+#### 抓取字段及存储 ####
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* [info](http://wap.jd.com/product/1227234.html) :  即product的基本信息，存储字段 [id, url, title, category, price, meta, [detail](http://wap.jd.com/detail/1227234.html)]
+* info.json :  即 info对应的json格式文件
+* [comment](http://wap.jd.com/comments/1227234.html)   :   product的评论，存储格式  u_info:u_score:u_sum
 
-### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
 
-### Who do I talk to? ###
+##2. 数据处理流程 ##
 
-* Repo owner or admin
-* Other community or team contact
+#### 输入 ####
+* json文件，见info.json 目录
+* 未考虑评论信息, 只考虑了三个字段	rawStr = title + meta + detail
+
+#### 数据预处理 ####
+* 对rawStr处理流程：去噪，分词，去停用词，做词典，词频统计分析，做BOW
+* 输出BOW特征，存储为libSVM格式
+
+## 3. 分类 ##
+* 输入： BOW特征 + 类别信息， 见info.BOW目录
+* 输出： 
+
+分类准确率：
+
+        logistic regression:
+        accuracy:0.95652173913
+        SVM for classification:
+        accuracy:0.95652173913
+
+-------
+
+### 代码简介 ###
+
+代码入口：
+
+* jd_wap：    爬虫入口
+* jd_process：数据预处理入口
+* classify:   分类器入口
+
+
+代码模块：
+
+* jd_parse模块： 主要负责京东相关页面解析
+* jd_item 模块： 定义了商品、类别、评论的基本属性及方法
+* documnts模块： 定义了文档、字典的基本属性及方法
+* FileUtil模块： 负责基本的NLP任务，如去停用词、分词等任务
+
+-------
+
+
+### data目录 ###
+子目录：
+
+* comments目录： 商品评论
+* info目录：     商品基本信息（易读格式，供浏览）
+* info.json:     info目录文件的json格式（用于数据处理）
+* info.word      商品基本信息提取的特征（即每个单词，供浏览）
+* info.BOW       info.word对应的BOW转码（libSVM格式，用于分类）
+* stopwords目录： 停用词表（用于数据处理）
+
+文件：
+
+* category：      类别表（即label，共八类，行号对应id 0-7）
+* product.BOW     所有类别的BOW汇总（即info.BOW目录中的汇总）
+* word.count      所有文档的词频（用于视觉分析，或浏览）
+
+-------
+
+### 运行建议 ###
+
+* 倒序执行： 由于整个流程具有前后依赖关系，如果您想快速熟悉流程，请按照3,2,1倒序执行
