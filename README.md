@@ -2,6 +2,8 @@
 download by git
 
     git clone https://song_xu@bitbucket.org/song_xu/jd.git
+    or by [zip-file](https://bitbucket.org/song_xu/jd/get/cf4525b7bce3.zip)
+
 -------
 
 ## 1. 数据爬取 ##
