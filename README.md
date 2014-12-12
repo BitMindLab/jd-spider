@@ -1,5 +1,5 @@
 # 京东商品分类 #
-download by git
+通过git下载，请使用以下命令
 
     git clone https://song_xu@bitbucket.org/song_xu/jd.git
 
