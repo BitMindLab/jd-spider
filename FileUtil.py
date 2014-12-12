@@ -47,11 +47,13 @@ def cleanStr(s, coding='unicode'):
         
     return new_str
 
-def cutWords(Str):
+def cutWords(s):
     '''  去除某些符号，并分词   '''
-    print 'raw string:' + Str
-    wordList = list(jieba.cut(cleanStr(Str)))
-    print 'after wordcuts:' + ', '.join(wordList)
+    if jd_config.verbose:    print 'raw string:' + s
+    else: print 'raw string:' + s[0:min(max(s),40)]+'...'
+    wordList = list(jieba.cut(cleanStr(s)))
+    if jd_config.verbose: print 'after wordcuts:' + ', '.join(wordList)
+    else: print 'after wordcuts:' + ', '.join(wordList[0:min(max(wordList), 10)]) + '......'
     return wordList
 
 
@@ -63,7 +65,7 @@ def rmStopwords(wordList):
         wordList = [w for w in wordList if len(w)<15]  #去除特别长的字符串
     if jd_config.is_rmShort:
         wordList = [w for w in wordList if len(w)>1]  #去除特别短的字符串
-    print 'after stopwords：' + ', '.join(wordList)
+    print 'after stopwords：' + ', '.join(wordList[0:min(max(wordList), 10)]) + '......\n'
     return wordList
 
 
