@@ -4,17 +4,19 @@ Created on Dec 7, 2014
 
 @author: xx
 '''
+import sys
+print 'old encoding value:', sys.getdefaultencoding()
+reload(sys)
+sys.setdefaultencoding('utf-8' )
+print 'new encoding value:', sys.getdefaultencoding()
+
 import os
 import json
 from jd_item import product
 from documents import dictionary, document
 import jd_config
 
-import sys
-print 'old encoding value:', sys.getdefaultencoding()
-reload(sys)
-sys.setdefaultencoding('utf-8' )
-print 'new encoding value:', sys.getdefaultencoding()
+
 
 
 def object_decoder(obj):

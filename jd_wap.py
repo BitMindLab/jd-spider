@@ -1,20 +1,22 @@
 #!coding:utf-8
-# 京东移动版
+# 京东移动版 wap.jd.com
 '''
 Created on Dec 7, 2014
 
 @author: xx
 '''
-import os
+
 import sys
-import jd_parse# import parse_root, test
-import jd_config
-
-
 print 'old encoding value:', sys.getdefaultencoding()
 reload(sys)
 sys.setdefaultencoding('utf-8' )
 print 'new encoding value:', sys.getdefaultencoding()
+
+import os
+import jd_parse# import parse_root, test
+import jd_config
+
+
 
 if (__name__ == '__main__'):
 
