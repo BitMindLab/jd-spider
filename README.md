@@ -1,7 +1,7 @@
 # 京东商品分类 #
 推荐通过git下载，请使用以下命令
 
-    git clone https://song_xu@bitbucket.org/song_xu/jd.git
+    git clone https://song_xu@bitbucket.org/song_xu/jd-spider.git
 
 或者请点 [这里](https://bitbucket.org/song_xu/jd/downloads) 下载压缩包(不推荐)
 
