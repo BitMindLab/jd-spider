@@ -1,11 +1,12 @@
 # 京东商品分类 #
-通过git下载，请使用以下命令
+推荐通过git下载，请使用以下命令
 
-    git clone https://song_xu@bitbucket.org/song_xu/jd.git
+    git clone https://song_xu@bitbucket.org/song_xu/jd-spider.git
 
-或者请点 [这里](https://bitbucket.org/song_xu/jd/get/cf4525b7bce3.zip) 下载压缩包
+或者请点 [这里](https://bitbucket.org/song_xu/jd/downloads) 下载压缩包(不推荐)
 
 -------
+# 一、流程简介 #
 
 ## 1. 数据爬取 ##
 #### 预分析 ####
@@ -45,7 +46,7 @@
 
 -------
 
-### 代码简介 ###
+# 二、代码简介 #
 
 代码入口：
 
@@ -64,8 +65,8 @@
 -------
 
 
-### data目录 ###
-子目录：
+# 三、数据简介 ###
+data目录：
 
 * comments目录： 商品评论
 * info目录：     商品基本信息（易读格式，供浏览）
@@ -82,7 +83,7 @@
 
 -------
 
-### Tips ###
+# 四、Tips #
 
 * 如果快速测试，请跳过1（利用已经爬取的数据，节省数据爬取的时间消耗）
 * 运行依赖 scikit-learn 和 beautifullsoup， 如需安装请参考官网
